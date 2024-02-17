@@ -6,6 +6,12 @@
 
 Implementation fork lives here <a href="https://github.com/renmat/llama2.java">https://github.com/renmat/llama2.java</a>
 
+Export weights as npy files to be loaded in ND4J
+```
+for k, v in model.state_dict().items():
+    numpy_weight = v.cpu().numpy()
+    np.save(f"{k}.npy", numpy_weight)
+```
 ## License
 
 MIT
